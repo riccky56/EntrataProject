@@ -2,13 +2,10 @@ package testing;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.BeforeClass;
-
 import org.testng.annotations.Test;
 
 import Base.Browser2;
 import pages.loginpage;
-
-
 
 public class loginTest extends Browser2{
 
