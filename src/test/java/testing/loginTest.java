@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import Base.Browser2;
 import pages.loginpage;
 
+// Class declaration that groups the related example logic in one place.
 public class loginTest extends Browser2{
 
 	//static WebDriver driver;
@@ -14,6 +15,7 @@ public class loginTest extends Browser2{
 
 
     @BeforeClass
+	// Method definition that performs a specific part of the program workflow.
 	public  void setup(){
 		//driver = new ChromeDriver(); if no driver is assigned from browser2 or any other class
 		Browser2.startBrowser();
@@ -25,6 +27,7 @@ public class loginTest extends Browser2{
 
 
 	@Test
+	// Method definition that performs a specific part of the program workflow.
 	public void first() throws InterruptedException {
         
 		loginpage log = new loginpage(driver);

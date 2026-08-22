@@ -10,12 +10,14 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 
+// Class declaration that groups the related example logic in one place.
 public class Browser {
 
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	
 	@BeforeMethod
+	// Method definition that performs a specific part of the program workflow.
 	public static void startBrowser() {
 	driver = new ChromeDriver();
 	
@@ -31,6 +33,7 @@ public class Browser {
 	
 
     @AfterMethod
+    // Method definition that performs a specific part of the program workflow.
     public void tearDown() {
         driver.quit();
     }

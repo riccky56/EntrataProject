@@ -15,6 +15,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+// Class declaration that groups the related example logic in one place.
 public class ExcelUtility {
 
 	public FileInputStream fi;
@@ -26,35 +27,43 @@ public class ExcelUtility {
 	public CellStyle style;   
 	String path;
 	
+	// Method definition that performs a specific part of the program workflow.
 	public ExcelUtility(String path)
 	{
 		this.path=path;
 	}
 		
+	// Method definition that performs a specific part of the program workflow.
 	public int getRowCount(String sheetName) throws IOException 
 	{
 		fi=new FileInputStream(path);
 		workbook=new XSSFWorkbook(fi);
 		sheet=workbook.getSheet(sheetName);
+		// Initialize a variable that will be used in the logic.
 		int rowcount=sheet.getLastRowNum();
 		workbook.close();
 		fi.close();
+		// Return the final result back to the caller.
 		return rowcount;		
 	}
 	
+	// Method definition that performs a specific part of the program workflow.
 	public int getCellCount(String sheetName,int rownum) throws IOException
 	{
 		fi=new FileInputStream(path);
 		workbook=new XSSFWorkbook(fi);
 		sheet=workbook.getSheet(sheetName);
 		row=sheet.getRow(rownum);
+		// Initialize a variable that will be used in the logic.
 		int cellcount=row.getLastCellNum();
 		workbook.close();
 		fi.close();
+		// Return the final result back to the caller.
 		return cellcount;
 	}
 	
 	
+	// Method definition that performs a specific part of the program workflow.
 	public String getCellData(String sheetName,int rownum,int colnum) throws IOException
 	{
 		fi=new FileInputStream(path);
@@ -74,9 +83,11 @@ public class ExcelUtility {
 		}
 		workbook.close();
 		fi.close();
+		// Return the final result back to the caller.
 		return data;
 	}
 	
+	// Method definition that performs a specific part of the program workflow.
 	public void setCellData(String sheetName,int rownum,int colnum,String data) throws IOException
 	{
 		File xlfile=new File(path);
@@ -108,6 +119,7 @@ public class ExcelUtility {
 	}
 	
 	
+	// Method definition that performs a specific part of the program workflow.
 	public void fillGreenColor(String sheetName,int rownum,int colnum) throws IOException
 	{
 		fi=new FileInputStream(path);
@@ -130,6 +142,7 @@ public class ExcelUtility {
 	}
 	
 	
+	// Method definition that performs a specific part of the program workflow.
 	public void fillRedColor(String sheetName,int rownum,int colnum) throws IOException
 	{
 		fi=new FileInputStream(path);

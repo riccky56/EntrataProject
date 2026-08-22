@@ -6,9 +6,11 @@ import org.testng.annotations.Test;
 
 import Base.Browser;
 
+// Class declaration that groups the related example logic in one place.
 public class Form_Filling_Test extends Browser {
 
     @Test
+    // Method definition that performs a specific part of the program workflow.
     public void testEnterTextInDemoForm() throws InterruptedException {
     	
     	//filling firstname

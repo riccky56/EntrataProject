@@ -7,9 +7,11 @@ import pageObjects.AccountRegistrationPage;
 import pageObjects.HomePage;
 import testBase.BaseClass;
 
+// Class declaration that groups the related example logic in one place.
 public class TC001_AccountRegistrationTest extends BaseClass {
 	
 	@Test(groups={"Regression","Master"})
+	// Method definition that performs a specific part of the program workflow.
 	public void verify_account_registration()
 	{
 		logger.info("***** Starting TC001_AccountRegistrationTest  ****");
@@ -31,6 +33,7 @@ public class TC001_AccountRegistrationTest extends BaseClass {
 		regpage.setEmail(randomeString()+"@gmail.com");// randomly generated the email
 		regpage.setTelephone(randomeNumber());
 			
+		// Store text data that will be processed by the program logic.
 		String password=randomeAlphaNumberic();
 			
 		regpage.setPassword(password);
@@ -41,6 +44,7 @@ public class TC001_AccountRegistrationTest extends BaseClass {
 		
 		logger.info("Validating expected message..");
 		
+		// Store text data that will be processed by the program logic.
 		String confmsg = regpage.getConfirmationMsg();
 		Assert.assertEquals(confmsg, "Your Account Has Been Created!", "Confirmation message mismatch");
 

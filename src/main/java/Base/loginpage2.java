@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+// Class declaration that groups the related example logic in one place.
 public class loginpage2 {	
 	
     //constructor 
@@ -29,19 +30,25 @@ public class loginpage2 {
 
 	 
 	
+	 // Method definition that performs a specific part of the program workflow.
 	 public void enterusername(String username)
 	 {
 		 usernameinput.clear();
+		 // Type the required value into the target input field.
 		 usernameinput.sendKeys(username);
 	 }
 
+	 // Method definition that performs a specific part of the program workflow.
 	 public void enterpassword(String password)
 	 {
 		 passwordinput.clear();
+		 // Type the required value into the target input field.
 		 passwordinput.sendKeys(password);
 	 }
+	 // Method definition that performs a specific part of the program workflow.
 	 public void loginbutton() 
 	 {
+		 // Click the target element to continue the workflow.
 		 loginbutton.click();
 	 }
 	 

@@ -12,17 +12,21 @@ import org.testng.annotations.Test;
 
 import Base.Browser;
 
+// Class declaration that groups the related example logic in one place.
 public class NavigationTest extends Browser {
 	//Property Operations
 	@Test
+	// Method definition that performs a specific part of the program workflow.
 	public void testNavigateToProductsPage() throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		//waiting for the product button to show and be stable
 		WebElement products = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[text()='Products']")));
 		js.executeScript("arguments[0].scrollIntoView(true);", products);
+		// Click the target element to continue the workflow.
 		products.click();
 		//waiting for the product button to show and be stable
 		WebElement dropdownToggle = wait.until(ExpectedConditions.elementToBeClickable(By.id("w-dropdown-toggle-0")));
+		// Click the target element to continue the workflow.
 		dropdownToggle.click();
 		 
 		//waiting for the pospectportal to be active
@@ -40,15 +44,18 @@ public class NavigationTest extends Browser {
 		   	}
 
 	@Test
+	// Method definition that performs a specific part of the program workflow.
 	public void testNavigateToSolutionsPage() throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		
 		WebElement Solutions = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[text()='Solutions'])[1]")));
 		js.executeScript("arguments[0].scrollIntoView(true);", Solutions);
+		// Click the target element to continue the workflow.
 		Solutions.click();
 		
 		WebElement dropdownToggle1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='dropdown-chevron w-embed'])[2]")));
 		js.executeScript("arguments[0].scrollIntoView(true);", dropdownToggle1);
+		// Click the target element to continue the workflow.
 		dropdownToggle1.click();
 		 
 		
@@ -56,6 +63,7 @@ public class NavigationTest extends Browser {
 		js.executeScript("arguments[0].scrollIntoView(true);", multifamily);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[text()='Multifamily'])[1]")));
 				
+		// Click the target element to continue the workflow.
 		js.executeScript("arguments[0].click();", multifamily);
 
 		String expected = "https://www.entrata.com/solutions/multifamily";

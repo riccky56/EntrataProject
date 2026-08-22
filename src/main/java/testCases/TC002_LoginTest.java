@@ -8,9 +8,11 @@ import pageObjects.LoginPage;
 import pageObjects.MyAccountPage;
 import testBase.BaseClass;
 
+// Class declaration that groups the related example logic in one place.
 public class TC002_LoginTest extends BaseClass{
 
 	@Test(groups={"Sanity","Master"})
+	// Method definition that performs a specific part of the program workflow.
 	public void verify_login()
 	{
 		logger.info("****** Startign TC_002_LoginTest *****");
@@ -30,6 +32,7 @@ public class TC002_LoginTest extends BaseClass{
 		
 		//MyAccount
 		MyAccountPage macc=new MyAccountPage(driver);
+		// Store a true or false state needed for conditional logic.
 		boolean targetPage=macc.isMyAccountPageExists();
 		
 		Assert.assertTrue(targetPage);//Assert.assertEquals(targetPage, true,"Login failed");

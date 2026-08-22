@@ -11,22 +11,27 @@ import org.testng.annotations.Test;
 
 import Base.Browser;
 
+// Class declaration that groups the related example logic in one place.
 public class DynamicContentTest extends Browser{
 
 
     @Test
+    // Method definition that performs a specific part of the program workflow.
     public void testHeaderChangesOnHover() {
    
     	JavascriptExecutor js = (JavascriptExecutor) driver;
     	//to wait for the solutions button to be stable
 		WebElement Solutions = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[text()='Solutions'])[1]")));
 		js.executeScript("arguments[0].scrollIntoView(true);", Solutions);
+		// Click the target element to continue the workflow.
 		Solutions.click();
+        // Store text data that will be processed by the program logic.
         String initialColor = Solutions.getCssValue("color");
         Assert.assertNotNull(initialColor);
     }
 
     @Test
+    // Method definition that performs a specific part of the program workflow.
     public void testChatWidgetPresence() {
     	//failing this test as to verify the assertion as chat widget is not present
     	

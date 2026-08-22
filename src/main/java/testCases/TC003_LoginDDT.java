@@ -21,6 +21,7 @@ Data is invalid - login success - test fail  - logout
 public class TC003_LoginDDT extends BaseClass {
 
 	@Test(dataProvider="LoginData", dataProviderClass=DataProviders.class,groups="Datadriven")// getting data provider from different class
+	// Method definition that performs a specific part of the program workflow.
 	public void verify_loginDDT(String email, String pwd, String exp) throws InterruptedException
 	{
 		logger.info("***** stating TC_003_LoginDDT ******");
@@ -40,31 +41,38 @@ public class TC003_LoginDDT extends BaseClass {
 			
 		//MyAccount
 		MyAccountPage macc=new MyAccountPage(driver);
+		// Store a true or false state needed for conditional logic.
 		boolean targetPage=macc.isMyAccountPageExists();
 		
 		
+		// Check the condition before deciding whether this block should run.
 		if(exp.equalsIgnoreCase("Valid"))
 		{
+			// Check the condition before deciding whether this block should run.
 			if(targetPage==true)
 			{			
 				macc.clickLogout();
 				Assert.assertTrue(true);
 				
 			}
+			// Execute this block when the earlier conditions do not match.
 			else
 			{
 				Assert.assertTrue(false);
 			}
 		}
 		
+		// Check the condition before deciding whether this block should run.
 		if(exp.equalsIgnoreCase("Invalid"))
 		{
+			// Check the condition before deciding whether this block should run.
 			if(targetPage==true)
 			{
 				macc.clickLogout();
 				Assert.assertTrue(false);
 				
 			}
+			// Execute this block when the earlier conditions do not match.
 			else
 			{
 				Assert.assertTrue(true);
